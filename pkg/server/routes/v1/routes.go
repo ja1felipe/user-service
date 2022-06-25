@@ -8,4 +8,5 @@ import (
 func ConfigRoutes(router *gin.Engine, db *gorm.DB) {
 	main := router.Group("api/v1")
 	UserRoutes(main, db)
+	CreditCardRoutes(main, db)
 }

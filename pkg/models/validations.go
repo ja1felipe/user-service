@@ -22,3 +22,12 @@ func BasicUserValidation(u *User) (err error) {
 	}
 	return
 }
+
+func CreditCardValidation(c *CreditCard) (err error) {
+	valid, _ := regexp.MatchString("([0-9]{16})", c.Number)
+
+	if !valid {
+		return errors.New("invalidated credit card")
+	}
+	return
+}
